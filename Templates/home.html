@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Company Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Reference No.</th>
+                <th>Journal Date</th>
+                <th>Date of Purchase</th>
+                <th>Date of Expiry</th>
+                <th>Name of Purchaser</th>
+                <th>Prefix</th>
+                <th>Bond Number</th>
+                <th>Denominations</th>
+                <th>Issue Branch Code</th>
+                <th>Issue Teller</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
