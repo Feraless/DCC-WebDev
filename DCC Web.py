@@ -18,10 +18,8 @@ def about():
         cur = mysql.connection.cursor()
         query = """
             (SELECT * FROM company_name WHERE `Bond\nNumber` = %s)
-            UNION
-            (SELECT * FROM political_party WHERE `Bond\nNumber` = %s)
         """
-        cur.execute(query, (bondno, bondno))
+        cur.execute(query, (bondno,))  # Pass bondno as a tuple
         result = cur.fetchall()
         cur.close()
         print("Fetched data:", result)
